@@ -24,4 +24,7 @@ command: >-
   --n_estimators ${{inputs.n_estimators}}
   --max_depth ${{inputs.max_depth}}
   --model_output ${{outputs.model_output}}
-environment: azureml:used-cars-train-env@latest
+# >>> CLAUDE FIX: the custom environment (used-cars-train-env: Ubuntu 18.04 + Python 3.7) did not finish
+#     building after 1h+. Switched to the prebuilt sklearn environment the notebook pipeline ran on successfully.
+# ORIGINAL: environment: azureml:used-cars-train-env@latest
+environment: azureml:AzureML-sklearn-1.0-ubuntu20.04-py38-cpu@latest
