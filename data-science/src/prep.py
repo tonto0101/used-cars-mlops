@@ -29,6 +29,7 @@ def main(args):  # Write the function name for the main data preparation logic
 
     # Reading Data
     df = pd.read_csv(args.raw_data)
+    print(f"Rows loaded: {len(df)}")
 
     # Encode categorical feature
     le = LabelEncoder()
